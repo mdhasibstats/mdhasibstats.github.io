@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md. Hasib | Aspiring Data Analyst</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary: #7e22ce;
+        --dark: #1e293b;
+        --light: #f8fafc;
+        --gray: #64748b;
+        --gradient-start: #4f46e5;
+        --gradient-end: #7c3aed;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--light);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(79, 70, 229, 0.3);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--dark);
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      /* Header & Navigation */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--dark);
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 30px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .mobile-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 180px 0 100px;
+        background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -10%;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          rgba(79, 70, 229, 0.1),
+          rgba(124, 58, 237, 0.1)
+        );
+        z-index: 0;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .hero-text {
+        flex: 1;
+        max-width: 600px;
+      }
+
+      .hero-text h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        color: var(--dark);
+      }
+
+      .hero-text h1 span {
+        font-size: 2.3rem;
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-text p {
+        font-size: 1.2rem;
+        color: var(--gray);
+        margin-bottom: 30px;
+        max-width: 500px;
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .hero-img {
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(79, 70, 229, 0.3);
+      }
+
+      .hero-img::before {
+        content: "";
+        position: absolute;
+        width: 92%;
+        height: 92%;
+        border-radius: 50%;
+        background-color: var(--light);
+        background-image: url("profile.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* About Section */
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-img {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: var(--dark);
+      }
+
+      .about-text p {
+        margin-bottom: 15px;
+        color: var(--gray);
+      }
+
+      /* Skills Section */
+      .skills {
+        background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      }
+
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .skill-category {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .skill-category:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(79, 70, 229, 0.15);
+      }
+
+      .skill-category h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--dark);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-item {
+        background: linear-gradient(
+          135deg,
+          rgba(79, 70, 229, 0.1),
+          rgba(124, 58, 237, 0.1)
+        );
+        color: var(--primary);
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(79, 70, 229, 0.15);
+      }
+
+      .project-img {
+        height: 200px;
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        position: relative;
+      }
+
+      .project-content {
+        padding: 25px;
+      }
+
+      .project-content h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: var(--dark);
+      }
+
+      .project-content p {
+        color: var(--gray);
+        margin-bottom: 15px;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 15px;
+      }
+
+      .project-tag {
+        background: rgba(79, 70, 229, 0.1);
+        color: var(--primary);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+      }
+
+      /* Contact Section */
+      .contact {
+        background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .contact-text h4 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        color: var(--dark);
+      }
+
+      .contact-text p,
+      .contact-text a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-text a:hover {
+        color: var(--primary);
+      }
+
+      .contact-form {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--dark);
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 40px 0 20px;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .social-link {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--primary);
+        transform: translateY(-5px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .hero-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-text {
+          margin-bottom: 50px;
+        }
+
+        .hero-text p {
+          margin: 0 auto 30px;
+        }
+
+        .about-content {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          position: fixed;
+          top: 80px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 80px);
+          background: white;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 40px;
+          transition: all 0.3s ease;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active {
+          left: 0;
+        }
+
+        .nav-links li {
+          margin: 15px 0;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .hero-text h1 {
+          font-size: 2.8rem;
+        }
+
+        .hero-img {
+          width: 280px;
+          height: 280px;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          padding: 150px 0 80px;
+        }
+
+        .hero-text h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero-img {
+          width: 220px;
+          height: 220px;
+        }
+
+        section {
+          padding: 60px 0;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#" class="logo">Hasib<span>.</span></a>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Md. Hasib<br /><span>Aspiring Data Analyst</span></h1>
+            <p>
+              Final year Statistics student passionate about transforming data
+              into actionable insights. Specializing in statistical analysis,
+              data visualization, and predictive modeling.
+            </p>
+            <a href="#contact" class="btn">Get In Touch</a>
+          </div>
+          <div class="hero-image">
+            <div class="hero-img"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Statistics Student & Data Enthusiast</h3>
+            <p>
+              Hello! I'm Md. Hasib, a final year Statistics student with a
+              passion for data analysis and interpretation. I'm dedicated to
+              uncovering meaningful insights from complex datasets to drive
+              informed decision-making.
+            </p>
+            <p>
+              My academic journey has equipped me with a strong foundation in
+              statistical theories, probability, and quantitative methods. I've
+              developed expertise in applying statistical techniques to solve
+              real-world problems and communicate findings effectively.
+            </p>
+            <p>
+              As an aspiring Data Analyst, I'm continuously expanding my skill
+              set through hands-on projects and staying current with industry
+              trends. I'm proficient in various data analysis tools and
+              programming languages, with a particular interest in data
+              visualization and predictive modeling.
+            </p>
+            <p>
+              I'm seeking opportunities to apply my analytical skills in a
+              professional setting where I can contribute to data-driven
+              solutions and continue growing as an analyst.
+            </p>
+            <a href="#contact" class="btn">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="section-title">
+          <h2>My Skills</h2>
+        </div>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3><i class="fas fa-chart-line"></i> Statistical Analysis</h3>
+            <div class="skill-list">
+              <div class="skill-item">Machine Learning</div>
+              <div class="skill-item">Hypothesis Testing</div>
+              <div class="skill-item">Regression Analysis</div>
+              <div class="skill-item">Probability Theory</div>
+              <div class="skill-item">Experimental Design</div>
+              <div class="skill-item">Time Series Analysis</div>
+              <div class="skill-item">Bayesian Statistics</div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+            <div class="skill-list">
+              <div class="skill-item">Python</div>
+              <div class="skill-item">SPSS</div>
+              <div class="skill-item">STATA</div>
+              <div class="skill-item">R Programming</div>
+              <div class="skill-item">SQL</div>
+              <div class="skill-item">Excel</div>
+              <div class="skill-item">MS Word</div>
+              <div class="skill-item">Power BI</div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-database"></i> Data Management</h3>
+            <div class="skill-list">
+              <div class="skill-item">Data Cleaning</div>
+              <div class="skill-item">Data Wrangling</div>
+              <div class="skill-item">Data Visualization</div>
+              <div class="skill-item">Database Design</div>
+              <div class="skill-item">ETL Processes</div>
+              <div class="skill-item">Big Data Concepts</div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-brain"></i> Soft Skills</h3>
+            <div class="skill-list">
+              <div class="skill-item">Analytical Thinking</div>
+              <div class="skill-item">Problem Solving</div>
+              <div class="skill-item">Communication</div>
+              <div class="skill-item">Data Storytelling</div>
+              <div class="skill-item">Team Collaboration</div>
+              <div class="skill-item">Attention to Detail</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2>My Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div
+              class="project-img"
+              style="
+                background-image: url('home-insurance-getty.webp');
+                background-size: cover;
+              "
+            ></div>
+            <div class="project-content">
+              <h3>Insurance Charges Predictive Modeling</h3>
+              <div class="project-tags">
+                <div class="project-tag">Python</div>
+                <div class="project-tag">statsmodels</div>
+                <div class="project-tag">Linear Regression</div>
+                <div class="project-tag">EDA</div>
+                <div class="project-tag">Hypothesis Testing</div>
+              </div>
+              <p>
+                Developed multiple regression models to predict medical
+                insurance charges using Python's statsmodels. Performed
+                comprehensive EDA, feature engineering, and statistical testing
+                to identify significant predictors like age, BMI, and smoking
+                status.
+              </p>
+              <a
+                href="https://github.com/mdhasibstats/insurance-charges-modeling-with-statsmodels"
+                target="_blank"
+                class="btn"
+                style="margin-top: 15px; display: inline-block"
+              >
+                View Analysis
+              </a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div
+              class="project-img"
+              style="
+                background-image: url('ms-excel-logo.jpg');
+                background-size: cover;
+              "
+            ></div>
+            <div class="project-content">
+              <h3>Coffee Shop Sales Dashboard</h3>
+              <div class="project-tags">
+                <div class="project-tag">Microsoft Excel</div>
+                <div class="project-tag">Power Query</div>
+                <div class="project-tag">Dashboard</div>
+                <div class="project-tag">Pivot Table</div>
+                <div class="project-tag">Sales Analysis</div>
+              </div>
+              <p>
+                Developed an interactive Excel dashboard to explore coffee shop
+                sales trends, KPIs, and performance. This project demonstrates
+                dashboarding, data visualization, and storytelling in Excel.
+              </p>
+              <a
+                href="https://github.com/mdhasibstats/coffee-shop-dashboard"
+                target="_blank"
+                class="btn"
+                style="margin-top: 15px; display: inline-block"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div
+              class="project-img"
+              style="
+                background-image: url('spss-hg.jpg');
+                background-size: cover;
+              "
+            ></div>
+            <div class="project-content">
+              <h3>Pima Indians Diabetes Statistical Analysis</h3>
+              <div class="project-tags">
+                <div class="project-tag">SPSS</div>
+                <div class="project-tag">Statistical Analysis</div>
+                <div class="project-tag">Healthcare Analytics</div>
+                <div class="project-tag">Logistic Regression</div>
+              </div>
+              <p>
+                Conducted comprehensive statistical analysis of Pima Indians
+                diabetes dataset using SPSS. Performed descriptive statistics,
+                correlation analysis, and developed logistic regression models
+                to identify significant risk factors for diabetes.
+              </p>
+              <a
+                href="https://github.com/mdhasibstats/pima-diabetes-spss-analysis"
+                target="_blank"
+                class="btn"
+                style="margin-top: 15px; display: inline-block"
+              >
+                View Analysis
+              </a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div
+              class="project-img"
+              style="
+                background-image: url('powerbi-dashboard-preview.png');
+                background-size: cover;
+              "
+            ></div>
+            <div class="project-content">
+              <h3>Retail Sales Performance Dashboard</h3>
+              <div class="project-tags">
+                <div class="project-tag">Power BI</div>
+                <div class="project-tag">DAX</div>
+                <div class="project-tag">Sales Analytics</div>
+                <div class="project-tag">Data Modeling</div>
+              </div>
+              <p>
+                This Power BI project visualizes sales performance data from
+                2023 to 2025, providing key business insights such as total
+                sales, product performance, and regional trends.
+              </p>
+              <a
+                href="https://github.com/mdhasibstats/sales-dashboard-powerbi"
+                target="_blank"
+                class="btn"
+                style="margin-top: 15px; display: inline-block"
+              >
+                View Dashboard
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Me</h2>
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <a href="mailto:mdhasib.stats@gmail.com"
+                  >mdhasib.stats@gmail.com</a
+                >
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Phone</h4>
+                <p>+880 01725599937</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Location</h4>
+                <p>Chittagong, Bangladesh</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-text">
+                <h4>LinkedIn</h4>
+                <a href="#">linkedin.com/in/mdhasib</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-text">
+                <h4>GitHub</h4>
+                <a href="https://github.com/mdhasibstats"
+                  >https://github.com/mdhasibstats</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form
+              action="https://formspree.io/f/mdhasib.stats@gmail.com"
+              method="POST"
+              id="contactForm"
+            >
+              <!-- Name Field -->
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  required
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Email Field -->
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="_replyto"
+                  class="form-control"
+                  required
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Subject Field -->
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="_subject"
+                  class="form-control"
+                  required
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Message Field -->
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  required
+                  aria-required="true"
+                ></textarea>
+              </div>
+
+              <!-- Formspree Honeypot (Anti-Spam) -->
+              <input type="text" name="_gotcha" style="display: none" />
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn">Send Message</button>
+
+              <!-- Success Message (Hidden by Default) -->
+              <div
+                id="form-success"
+                style="display: none; margin-top: 20px; color: green"
+              >
+                <i class="fas fa-check-circle"></i> Message sent! I'll reply
+                soon.
+              </div>
+            </form>
+          </div>
+
+          <!-- JavaScript for Success Message -->
+          <script>
+            const form = document.getElementById("contactForm");
+            const successMsg = document.getElementById("form-success");
+
+            form.addEventListener("submit", async (e) => {
+              e.preventDefault();
+
+              try {
+                const response = await fetch(form.action, {
+                  method: "POST",
+                  body: new FormData(form),
+                  headers: {
+                    Accept: "application/json",
+                  },
+                });
+
+                if (response.ok) {
+                  form.reset();
+                  successMsg.style.display = "block";
+                  setTimeout(() => (successMsg.style.display = "none"), 5000);
+                }
+              } catch (error) {
+                console.error("Error:", error);
+              }
+            });
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="social-links">
+            <a href="#" class="social-link"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="https://github.com/mdhasibstats" class="social-link"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/hasibkhan25" class="social-link"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </div>
+          <div class="copyright">
+            <p>&copy; 2023 Md. Hasib. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const navLinks = document.querySelector(".nav-links");
+
+      mobileMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Smooth Scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          navLinks.classList.remove("active");
+
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Header Scroll Effect
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.1)";
+          header.style.background = "rgba(255, 255, 255, 0.98)";
+        } else {
+          header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+          header.style.background = "rgba(255, 255, 255, 0.95)";
+        }
+      });
+
+      // Form Submission
+      const contactForm = document.getElementById("contactForm");
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Form data would be sent to server here
+        const formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          subject: document.getElementById("subject").value,
+          message: document.getElementById("message").value,
+        };
+
+        console.log("Form submitted:", formData);
+
+        // Show success message
+        alert("Thank you for your message! I will get back to you soon.");
+        contactForm.reset();
+      });
+    </script>
+  </body>
+</html>
